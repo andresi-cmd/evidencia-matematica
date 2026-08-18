@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Fracciones</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js" defer></script>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Encabezado con el nombre y título -->
+        <header>
+            <h1 class="student-name">Ivan escobar</h1>
+            <h2 class="exercise-title">calculadora de fracciones</h2>
+        </header>
+
+        <!-- Contenedor principal de la calculadora -->
+        <main class="calculator-container">
+            
+            <!-- Primera Fracción -->
+            <div class="fraction-input">
+                <input type="number" id="num1" value="" class="numerator" placeholder="-">
+                <div class="fraction-bar"></div>
+                <input type="number" id="den1" value="" class="denominator" placeholder="-">
+            </div>
+
+            <!-- Selector de Operación -->
+            <div class="operator-container">
+                <select id="operator" class="operator-select">
+                    <option value=""></option>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">x</option>
+                    <option value="/">/</option>
+                </select>
+                <button onclick="operacion()" id="operar">operar</button>
+            </div>
+
+            <!-- Segunda Fracción -->
+            <div class="fraction-input">
+                <input type="number" id="num2" value="" class="numerator" placeholder="-">
+                <div class="fraction-bar"></div>
+                <input type="number" id="den2" value="" class="denominator" placeholder="-">
+            </div>
+
+            <!-- Signo igual -->
+            <span class="equals-sign">=</span>
+
+            <!-- Resultado (con campos de solo lectura para actualizar con JS) -->
+            <div class="fraction-input result-fraction">
+                <input type="number" id="result-num" value="" class="numerator" readonly>
+                <div class="fraction-bar"></div>
+                <input type="number" id="result-den" value="" class="denominator" readonly>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d1e3e; /* Fondo azul oscuro de la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor principal para centrar el contenido */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+/* Estilos para el encabezado */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.student-name {
+    font-size: 26px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.exercise-title {
+    font-size: 19px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* Estilos para el contenedor de la calculadora con degradado */
+.calculator-container {
+    background: linear-gradient(to bottom, #7ebcf7, #0d3663); /* Degradado azul */
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaciado entre elementos */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos para los bloques de fracciones */
+.fraction-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Estilos para las cajas de entrada de numerador y denominador */
+.fraction-input input {
+    width: 80px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Quitar flechas de número en navegadores */
+.fraction-input input::-webkit-outer-spin-button,
+.fraction-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.fraction-input input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Barra de fracción */
+.fraction-bar {
+    width: 90px;
+    height: 3px;
+    background-color: #333; /* Color oscuro para la línea */
+}
+
+/* Estilos para el selector de operación */
+.operator-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+#operar{
+border-radius: 10%;
+}
+
+.operator-select {
+    appearance: none; /* Quitar estilo nativo por defecto */
+    -webkit-appearance: none;
+    background-color: #c0d8ef; /* Fondo azul muy claro */
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 60px;
+    text-align: center;
+    /* Flecha de selección personalizada con SVG */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1.2em;
+}
+
+/* Signo igual */
+.equals-sign {
+    font-size: 30px;
+    color: #333;
+    padding: 0 10px;
+}
+
+/* Estilos específicos para la fracción de resultado (solo lectura) */
+.result-fraction .numerator,
+.result-fraction .denominator {
+    background-color: transparent; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    pointer-events: none; /* No interactuables */
+}
+
+/* Asegurar que la barra de fracción del resultado sea visible */
+.result-fraction .fraction-bar {
+    background-color: #333;
+}

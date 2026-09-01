@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Matemáticas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="top-banner">
+        <h2>Ejercicio #2 de Matemáticas</h2>
+        <h3>Generador Aleatorio de Ecuaciones</h3>
+    </header>
+
+    <main class="card-container">
+        <div class="game-card">
+            
+            <div class="equation-box">
+                <h1 id="equation-display">Cargando...</h1>
+            </div>
+
+            <div class="options-row">
+                <div class="option-container" onclick="checkAnswer(0)">
+                    <div class="circle" id="circle-0">A</div>
+                    <div class="value" id="val-0">-</div>
+                </div>
+                
+                <div class="option-container" onclick="checkAnswer(1)">
+                    <div class="circle" id="circle-1">B</div>
+                    <div class="value" id="val-1">-</div>
+                </div>
+                
+                <div class="option-container" onclick="checkAnswer(2)">
+                    <div class="circle" id="circle-2">C</div>
+                    <div class="value" id="val-2">-</div>
+                </div>
+            </div>
+
+            <div class="timer-section">
+                <p>Timer</p>
+                <h2 id="timer-display">0:00</h2>
+            </div>
+
+            <button id="next-btn" onclick="initGame()">Siguiente Ecuación</button>
+        </div>
+    </main>
+
+    <script src="java.js"></script>
+</body>
+</html>

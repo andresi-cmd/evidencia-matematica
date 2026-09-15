@@ -1,0 +1,434 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #2c3e50;
+    overflow-x: hidden;
+}
+
+.padre {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Solución del overflow usando min-height y padding */
+.terrible {
+    min-height: 100vh;
+    width: 100%;
+    border-bottom: 5px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    position: relative;
+}
+
+/* Colores de fondo por sección para mantener la separación visual */
+.terrible:nth-child(1) { background-color: #34495e; }
+.terrible:nth-child(2) { background-color: #e2e8f0; }
+.terrible:nth-child(3) { 
+    background-color: #0f172a; 
+    border-bottom: none;
+}
+
+/* --- SECCIÓN 1 --- */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.student-name {
+    font-size: 26px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.exercise-title {
+    font-size: 19px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+.calculator-container {
+    background: linear-gradient(to bottom, #7ebcf7, #0d3663);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.fraction-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.fraction-input input {
+    width: 80px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+
+.fraction-input input::-webkit-outer-spin-button,
+.fraction-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.fraction-input input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.fraction-bar {
+    width: 90px;
+    height: 3px;
+    background-color: #333;
+}
+
+.operator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#operar {
+    border-radius: 8px;
+    padding: 8px 15px;
+}
+
+.operator-select {
+    appearance: none; 
+    -webkit-appearance: none;
+    background-color: #c0d8ef;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 60px;
+    text-align: center;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1.2em;
+}
+
+.equals-sign {
+    font-size: 30px;
+    color: #333;
+    padding: 0 10px;
+}
+
+.result-fraction .numerator,
+.result-fraction .denominator {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.result-fraction .fraction-bar {
+    background-color: #333;
+}
+
+/* --- SECCIÓN 2 --- */
+.top-banner {
+    background-color: #fbbf24;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.top-banner h2, .top-banner h3 {
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.4);
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.game-card {
+    background-color: #fcd34d;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 0 0 20px 20px;
+    padding: 40px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.equation-box {
+    background-color: #fef3c7;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.equation-box h1 {
+    color: #475569;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.options-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.option-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.option-container:hover {
+    transform: scale(1.1);
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    background-color: #f97316; 
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: background-color 0.3s;
+}
+
+.value {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.timer-section {
+    color: #333;
+}
+
+.timer-section p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.timer-section h2 {
+    font-size: 2rem;
+}
+
+#next-btn {
+    display: none; 
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #10b981;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+#next-btn:hover {
+    background-color: #059669;
+}
+
+/* --- SECCIÓN 3 --- */
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --primary: #14b8a6;
+    --primary-hover: #0d9488;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --error: #ef4444;
+}
+
+.container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+select, input {
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+select:focus, input:focus {
+    border-color: var(--primary);
+}
+
+#dynamic-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(15, 23, 42, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px dashed var(--border);
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+.results-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.results-box {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
+    color: var(--text-main);
+}
+
+.results-box p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.results-box span {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.error-msg {
+    color: var(--error);
+    font-size: 0.9rem;
+    text-align: center;
+    min-height: 1.2rem;
+}
+
+.canvas-container {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+canvas {
+    max-width: 100%;
+    max-height: 100%;
+}
+

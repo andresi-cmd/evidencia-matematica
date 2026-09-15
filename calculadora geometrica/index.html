@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Geométrica Dinámica</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Calculadora Geométrica</h1>
+    <h1>Ivan Escobar</h1>
+
+    <div class="form-section">
+        <div class="input-group">
+            <label for="shape-select">Elige una figura geométrica</label>
+            <select id="shape-select">
+                <option value="" disabled selected>-- Selecciona una opción --</option>
+                <option value="cuadrado">Cuadrado</option>
+                <option value="triangulo">Triángulo (Escaleno/Isósceles/Equilátero)</option>
+                <option value="trapecio">Trapecio Isósceles</option>
+                <option value="pentagono">Pentágono Regular</option>
+                <option value="circulo">Círculo</option>
+            </select>
+        </div>
+
+        <div id="dynamic-inputs">
+            <p style="color: var(--text-muted); text-align: center; font-size: 0.9rem;">
+                Selecciona una figura para ingresar las medidas.
+            </p>
+        </div>
+
+        <p id="error-message" class="error-msg"></p>
+
+        <button id="calc-btn">Calcular y Dibujar</button>
+    </div>
+
+    <div class="results-section">
+        <div class="results-box">
+            <p>Área: <span id="res-area">0.00</span></p>
+            <p>Perímetro: <span id="res-perimeter">0.00</span></p>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="shapeCanvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+

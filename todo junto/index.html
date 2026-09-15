@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Matemáticas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js" defer></script>
+</head>
+<body>
+    <div class="padre">
+
+        <section class="terrible"> 
+            <div class="page-container">
+                <header>
+                    <h1 class="student-name">Ivan Andres Escobar Losada</h1>
+                    <h2 class="exercise-title">Calculadora de fracciones</h2>
+                </header>
+
+                <main class="calculator-container">
+                    <div class="fraction-input">
+                        <input type="number" id="num1" value="" class="numerator" placeholder="-">
+                        <div class="fraction-bar"></div>
+                        <input type="number" id="den1" value="" class="denominator" placeholder="-">
+                    </div>
+
+                    <div class="operator-container">
+                        <select id="operator" class="operator-select">
+                            <option value=""></option>
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                            <option value="*">x</option>
+                            <option value="/">/</option>
+                        </select>
+                        <button onclick="operacion()" id="operar">Operar</button>
+                    </div>
+
+                    <div class="fraction-input">
+                        <input type="number" id="num2" value="" class="numerator" placeholder="-">
+                        <div class="fraction-bar"></div>
+                        <input type="number" id="den2" value="" class="denominator" placeholder="-">
+                    </div>
+
+                    <span class="equals-sign">=</span>
+
+                    <div class="fraction-input result-fraction">
+                        <input type="number" id="result-num" value="" class="numerator" readonly>
+                        <div class="fraction-bar"></div>
+                        <input type="number" id="result-den" value="" class="denominator" readonly>
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <section class="terrible">
+            <header class="top-banner">
+                <h2>Ejercicio #2 de Matemáticas</h2>
+                <h3>Generador Aleatorio de Ecuaciones</h3>
+            </header>
+
+            <main class="card-container">
+                <div class="game-card">
+                    <div class="equation-box">
+                        <h1 id="equation-display">Cargando...</h1>
+                    </div>
+
+                    <div class="options-row">
+                        <div class="option-container" onclick="checkAnswer(0)">
+                            <div class="circle" id="circle-0">A</div>
+                            <div class="value" id="val-0">-</div>
+                        </div>
+                        
+                        <div class="option-container" onclick="checkAnswer(1)">
+                            <div class="circle" id="circle-1">B</div>
+                            <div class="value" id="val-1">-</div>
+                        </div>
+                        
+                        <div class="option-container" onclick="checkAnswer(2)">
+                            <div class="circle" id="circle-2">C</div>
+                            <div class="value" id="val-2">-</div>
+                        </div>
+                    </div>
+
+                    <div class="timer-section">
+                        <p>Timer</p>
+                        <h2 id="timer-display">0:00</h2>
+                    </div>
+
+                    <button id="next-btn" onclick="initGame()">Siguiente Ecuación</button>
+                </div>
+            </main>
+        </section>
+
+
+        <section class="terrible">
+            <div class="container">
+                <h1>Calculadora Geométrica</h1>
+                <h2 style="text-align: center; color: var(--text-muted); font-size: 1.2rem; margin-top: -10px; margin-bottom: 20px;">Ivan Andres Escobar Losada</h2>
+
+                <div class="form-section">
+                    <div class="input-group">
+                        <label for="shape-select">Elige una figura geométrica</label>
+                        <select id="shape-select">
+                            <option value="" disabled selected>-- Selecciona una opción --</option>
+                            <option value="cuadrado">Cuadrado</option>
+                            <option value="triangulo">Triángulo (Escaleno/Isósceles/Equilátero)</option>
+                            <option value="trapecio">Trapecio Isósceles</option>
+                            <option value="pentagono">Pentágono Regular</option>
+                            <option value="circulo">Círculo</option>
+                        </select>
+                    </div>
+
+                    <div id="dynamic-inputs">
+                        <p style="color: var(--text-muted); text-align: center; font-size: 0.9rem;">
+                            Selecciona una figura para ingresar las medidas.
+                        </p>
+                    </div>
+
+                    <p id="error-message" class="error-msg"></p>
+
+                    <button id="calc-btn">Calcular y Dibujar</button>
+                </div>
+
+                <div class="results-section">
+                    <div class="results-box">
+                        <p>Área: <span id="res-area">0.00</span></p>
+                        <p>Perímetro: <span id="res-perimeter">0.00</span></p>
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="shapeCanvas" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+<section class="contenedor-video">
+  <h2>Conoce más en nuestro video</h2>
+  
+  <!-- Reproductor de video -->
+  <video width="100%" style="max-width: 800px; border-radius: 10px;" controls>
+
+    <source src="C:\Users\ivana\Desktop\Uso Javascript\matematicas\evidencia-matematica\todo junto\video" type="video/mp4">
+    
+    Tu navegador no soporta la reproducción de este video.
+  </video>
+</section>
+
+
+</body>
+</html>
